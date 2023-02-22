@@ -1,0 +1,19 @@
+{
+  "name": "backend-blog-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node -r esm server.js",
+    "dev": "nodemon -r esm server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.2"
+  }
+}
