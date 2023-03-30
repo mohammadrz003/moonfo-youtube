@@ -118,7 +118,7 @@ const Header = () => {
                     className="flex gap-x-1 items-center mt-5 lg:mt-0 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300"
                     onClick={() => setProfileDrowpdown(!profileDrowpdown)}
                   >
-                    <span>Profile</span>
+                    <span>Account</span>
                     <MdKeyboardArrowDown />
                   </button>
                   <div
@@ -128,10 +128,11 @@ const Header = () => {
                   >
                     <ul className="bg-dark-soft lg:bg-transparent text-center flex flex-col shadow-lg rounded-lg overflow-hidden">
                       <button
+                        onClick={() => navigate("/profile")}
                         type="button"
                         className="hover:bg-dark-hard hover:text-white px-4 py-2 text-white lg:text-dark-soft"
                       >
-                        Dashboard
+                        Profile Page
                       </button>
                       <button
                         onClick={logoutHandler}
