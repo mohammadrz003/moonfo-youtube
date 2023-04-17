@@ -4,7 +4,7 @@ const CommentSchema = new Schema(
   {
     user: { type: Schema.Types.ObjectId, ref: "User", required: true },
     desc: { type: String, required: true },
-    postId: { type: Schema.Types.ObjectId, ref: "Post", required: true },
+    post: { type: Schema.Types.ObjectId, ref: "Post", required: true },
     check: { type: Boolean, default: false },
     parent: {
       type: Schema.Types.ObjectId,

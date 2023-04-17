@@ -1,5 +1,6 @@
 import { uploadPicture } from "../middleware/uploadPictureMiddleware";
 import Post from "../models/Post";
+import Comment from "../models/Comment";
 import { fileRemover } from "../utils/fileRemover";
 import { v4 as uuidv4 } from "uuid";
 
@@ -78,4 +79,23 @@ const updatePost = async (req, res, next) => {
   }
 };
 
-export { createPost, updatePost };
+const deletePost = async (req, res, next) => {
+  try {
+    const post = await Post.findOneAndDelete({ slug: req.params.slug });
+
+    if (!post) {
+      const error = new Error("Post aws not found");
+      return next(error);
+    }
+
+    await Comment.deleteMany({ post: post._id });
+
+    return res.json({
+      message: "Post is successfully deleted",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export { createPost, updatePost, deletePost };
