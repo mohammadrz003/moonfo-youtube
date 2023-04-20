@@ -1,4 +1,3 @@
-import { async } from "q";
 import React, { useState } from "react";
 import Cropper from "react-easy-crop";
 
@@ -26,7 +25,7 @@ const CropEasy = ({ photo, setOpenCrop }) => {
     },
     onSuccess: (data) => {
       dispatch(userActions.setUserInfo(data));
-      setOpenCrop(false)
+      setOpenCrop(false);
       localStorage.setItem("account", JSON.stringify(data));
       queryClient.invalidateQueries(["profile"]);
       toast.success("Profile Photo is updated");
