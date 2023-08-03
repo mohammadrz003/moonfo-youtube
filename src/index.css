@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .editor-btn {
+    @apply flex justify-center items-center text-slate-700 rounded-lg w-8 aspect-square;
+  }
+
+  .active-editor-btn {
+    @apply text-slate-800 bg-slate-200;
+  }
+}
