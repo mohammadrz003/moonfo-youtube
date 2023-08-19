@@ -1934,6 +1934,11 @@
   resolved "https://registry.npmjs.org/@tiptap/extension-dropcursor/-/extension-dropcursor-2.0.3.tgz"
   integrity sha512-McthMrfusn6PjcaynJLheZJcXto8TaIW5iVitYh8qQrDXr31MALC/5GvWuiswmQ8bAXiWPwlLDYE/OJfwtggaw==
 
+"@tiptap/extension-dropcursor@^2.1.6":
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-dropcursor/-/extension-dropcursor-2.1.6.tgz#539acde0125c76a42f78cec771ed85d7549cb4cd"
+  integrity sha512-+nk4XtCp2+lVf1pzwonaOdIolE9AI3HPAtUO7sthHYLDIm1JEQT2GS3+MVDGHdFKxEGUkB5DEcNLtr/xLTQjZQ==
+
 "@tiptap/extension-floating-menu@^2.0.3":
   version "2.0.3"
   resolved "https://registry.npmjs.org/@tiptap/extension-floating-menu/-/extension-floating-menu-2.0.3.tgz"
@@ -1965,6 +1970,11 @@
   version "2.0.3"
   resolved "https://registry.npmjs.org/@tiptap/extension-horizontal-rule/-/extension-horizontal-rule-2.0.3.tgz"
   integrity sha512-SZRUSh07b/M0kJHNKnfBwBMWrZBEm/E2LrK1NbluwT3DBhE+gvwiEdBxgB32zKHNxaDEXUJwUIPNC3JSbKvPUA==
+
+"@tiptap/extension-image@^2.1.6":
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-image/-/extension-image-2.1.6.tgz#b86ed44c4017a062358a744afc8e0e99861f5bc5"
+  integrity sha512-Ibu3yYDpWPJd9ajduzdJz8xscWNPYayWj+IATXU8FjsNvPkWpRoRZv+txfrTLOkmx8Qd3z30kriHNjZsIYLHkA==
 
 "@tiptap/extension-italic@^2.0.3":
   version "2.0.3"

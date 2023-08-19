@@ -11,10 +11,10 @@ const ArticleDetailSkeleton = () => {
         {/* title */}
         <div className="mt-4 md:text-[26px] w-2/5 h-2 rounded-lg bg-slate-400" />
         <div className="mt-4 prose prose-sm sm:prose-base">
-          <p class="w-1/2 h-2 mt-6 rounded-lg bg-slate-300"></p>
-          <p class="w-full h-2 mt-4 rounded-lg bg-slate-300"></p>
-          <p class="w-[70%] h-2 mt-4 rounded-lg bg-slate-300"></p>
-          <p class="w-4/5 h-2 mt-4 rounded-lg bg-slate-300"></p>
+          <p className="w-1/2 h-2 mt-6 rounded-lg bg-slate-300"></p>
+          <p className="w-full h-2 mt-4 rounded-lg bg-slate-300"></p>
+          <p className="w-[70%] h-2 mt-4 rounded-lg bg-slate-300"></p>
+          <p className="w-4/5 h-2 mt-4 rounded-lg bg-slate-300"></p>
         </div>
       </article>
 
@@ -35,7 +35,7 @@ const ArticleDetailSkeleton = () => {
               <div className="w-full">
                 {/* post title */}
                 <div className="w-full h-2 rounded-lg bg-slate-300" />
-                <p class="w-[60%] h-2 mt-4 rounded-lg bg-slate-300"></p>
+                <p className="w-[60%] h-2 mt-4 rounded-lg bg-slate-300"></p>
               </div>
             </div>
           ))}
