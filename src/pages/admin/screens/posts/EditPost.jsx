@@ -4,7 +4,6 @@ import { getSinglePost, updatePost } from "../../../../services/index/posts";
 import { Link, useParams } from "react-router-dom";
 import ArticleDetailSkeleton from "../../../articleDetail/components/ArticleDetailSkeleton";
 import ErrorMessage from "../../../../components/ErrorMessage";
-import parseJsonToHtml from "../../../../utils/parseJsonToHtml";
 import { stables } from "../../../../constants";
 import { HiOutlineCamera } from "react-icons/hi";
 import { toast } from "react-hot-toast";
