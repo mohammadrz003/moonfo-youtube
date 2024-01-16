@@ -32,7 +32,7 @@ export const createNewComment = async ({
   }
 };
 
-export const updateComment = async ({ token, desc, commentId }) => {
+export const updateComment = async ({ token, desc, check, commentId }) => {
   try {
     const config = {
       headers: {
@@ -44,6 +44,7 @@ export const updateComment = async ({ token, desc, commentId }) => {
       `/api/comments/${commentId}`,
       {
         desc,
+        check,
       },
       config
     );

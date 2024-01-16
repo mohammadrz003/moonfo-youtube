@@ -29,7 +29,10 @@ const Comment = ({
   const replyOnUserId = comment.user._id;
 
   return (
-    <div className="flex flex-nowrap items-start gap-x-3 bg-[#F2F4F5] p-3 rounded-lg">
+    <div
+      className="flex flex-nowrap items-start gap-x-3 bg-[#F2F4F5] p-3 rounded-lg"
+      id={`comment-${comment?._id}`}
+    >
       <img
         src={
           comment?.user?.avatar
