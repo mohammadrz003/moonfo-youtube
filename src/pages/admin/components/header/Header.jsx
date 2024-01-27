@@ -14,9 +14,9 @@ import { useSelector } from "react-redux";
 import { createPost } from "../../../../services/index/posts";
 
 const Header = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const userState = useSelector((state) => state.user);
-  const queryClient = useQueryClient()
+  const queryClient = useQueryClient();
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [activeNavName, setActiveNavName] = useState("dashboard");
   const windowSize = useWindowSize();
@@ -31,7 +31,7 @@ const Header = () => {
       onSuccess: (data) => {
         queryClient.invalidateQueries(["posts"]);
         toast.success("Post is created, edit that now!");
-        navigate(`/admin/posts/manage/edit/${data.slug}`)
+        navigate(`/admin/posts/manage/edit/${data.slug}`);
       },
       onError: (error) => {
         toast.error(error.message);
@@ -52,8 +52,8 @@ const Header = () => {
   }, [windowSize.width]);
 
   const handleCreateNewPost = ({ token }) => {
-    mutateCreatePost({ token })
-  }
+    mutateCreatePost({ token });
+  };
 
   return (
     <header className="flex h-fit w-full items-center justify-between p-4 lg:h-full lg:max-w-[300px] lg:flex-col lg:items-start lg:justify-start lg:p-0">
@@ -85,7 +85,6 @@ const Header = () => {
             <h4 className="mt-10 font-bold text-[#C7C7C7]">MAIN MENU</h4>
             {/* menu items */}
             <div className="mt-6 flex flex-col gap-y-[0.563rem]">
-
               <NavItem
                 title="Dashboard"
                 link="/admin"
@@ -111,9 +110,17 @@ const Header = () => {
                 setActiveNavName={setActiveNavName}
               >
                 <Link to="/admin/posts/manage">Manage all posts</Link>
-                <button disabled={isLoadingCreatePost} className="text-start disabled:opacity-60 disabled:cursor-not-allowed" onClick={() => handleCreateNewPost({ token: userState.userInfo.token })}>Add New Post</button>
+                <button
+                  disabled={isLoadingCreatePost}
+                  className="text-start disabled:opacity-60 disabled:cursor-not-allowed"
+                  onClick={() =>
+                    handleCreateNewPost({ token: userState.userInfo.token })
+                  }
+                >
+                  Add New Post
+                </button>
+                <Link to="/admin/categories/manage">Categories</Link>
               </NavItemCollapse>
-
             </div>
           </div>
         </div>
