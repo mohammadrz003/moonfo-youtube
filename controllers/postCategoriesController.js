@@ -24,6 +24,23 @@ const createPostCategory = async (req, res, next) => {
   }
 };
 
+const getSingleCategory = async (req, res, next) => {
+  try {
+    const postCategory = await PostCategories.findById(
+      req.params.postCategoryId
+    );
+
+    if (!postCategory) {
+      const error = new Error("Category was not found!");
+      return next(error);
+    }
+
+    return res.json(postCategory);
+  } catch (error) {
+    next(error);
+  }
+};
+
 const getAllPostCategories = async (req, res, next) => {
   try {
     const filter = req.query.searchKeyword;
@@ -110,4 +127,5 @@ export {
   getAllPostCategories,
   updatePostCategory,
   deletePostCategory,
+  getSingleCategory,
 };
