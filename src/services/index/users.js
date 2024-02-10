@@ -46,7 +46,7 @@ export const getUserProfile = async ({ token }) => {
   }
 };
 
-export const updateProfile = async ({ token, userData }) => {
+export const updateProfile = async ({ token, userData, userId }) => {
   try {
     const config = {
       headers: {
@@ -55,7 +55,7 @@ export const updateProfile = async ({ token, userData }) => {
     };
 
     const { data } = await axios.put(
-      "/api/users/updateProfile",
+      `/api/users/updateProfile/${userId}`,
       userData,
       config
     );
