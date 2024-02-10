@@ -84,9 +84,11 @@ const deletePost = async (req, res, next) => {
     const post = await Post.findOneAndDelete({ slug: req.params.slug });
 
     if (!post) {
-      const error = new Error("Post aws not found");
+      const error = new Error("Post was not found");
       return next(error);
     }
+
+    fileRemover(post.photo);
 
     await Comment.deleteMany({ post: post._id });
 

@@ -89,10 +89,24 @@ const userProfile = async (req, res, next) => {
 
 const updateProfile = async (req, res, next) => {
   try {
-    let user = await User.findById(req.user._id);
+    const userIdToUpdate = req.params.userId;
+
+    let userId = req.user._id;
+
+    if (!req.user.admin && userId !== userIdToUpdate) {
+      let error = new Error("Forbidden resource");
+      error.statusCode = 403;
+      throw error;
+    }
+
+    let user = await User.findById(userIdToUpdate);
 
     if (!user) {
       throw new Error("User not found");
+    }
+
+    if (typeof req.body.admin !== "undefined" && req.user.admin) {
+      user.admin = req.body.admin;
     }
 
     user.name = req.body.name || user.name;
@@ -229,7 +243,12 @@ const deleteUser = async (req, res, next) => {
       _id: { $in: postIdsToDelete },
     });
 
+    postsToDelete.forEach((post) => {
+      fileRemover(post.photo);
+    });
+
     await user.remove();
+    fileRemover(user.avatar);
 
     res.status(204).json({ message: "User is deleted successfully" });
   } catch (error) {
