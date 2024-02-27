@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import BreadCrumbs from "../../components/BreadCrumbs";
@@ -38,6 +38,10 @@ const ArticleDetailPage = () => {
     queryFn: () => getAllPosts(),
     queryKey: ["posts"],
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <MainLayout>

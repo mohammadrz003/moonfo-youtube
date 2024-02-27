@@ -57,6 +57,7 @@ const Pagination = ({
 
           return (
             <button
+              key={pageNumber}
               type="button"
               className={`w-full px-4 py-2 text-base border ${
                 pageNumber === currentPage
